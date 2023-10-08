@@ -25,9 +25,7 @@ $result = implode('/n', array_map(function(string $str){
 
 function task2(string $action, ...$args){
 
-    foreach ($args as $arg){
-
-    }
+    
 
     switch($action){
         case '+': 
@@ -67,12 +65,10 @@ function task3( $a,  $b){
         trigger_error('no integer');   
         return false;
     }
-
     if (!is_int($b)){
         trigger_error('no integer');   
         return false;
     }
-
     if ($a<0 || $b<0){
         trigger_error('Arguments to be positive');   
         return false;
@@ -126,4 +122,10 @@ function task6(){
 file_put_contents('test.txt', "Hello again");
 }
 
+function task7(){
 echo file_get_contents($filename);
+}
+
+
+
+
