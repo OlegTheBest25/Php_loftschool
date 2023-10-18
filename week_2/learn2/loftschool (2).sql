@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Окт 15 2023 г., 09:02
+-- Время создания: Окт 18 2023 г., 19:05
 -- Версия сервера: 8.0.24
 -- Версия PHP: 7.1.33
 
@@ -29,14 +29,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `burger` (
   `id` int NOT NULL,
-  `name` varchar(255) NOT NULL,
   `phone` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `street` varchar(255) NOT NULL,
-  `home` int NOT NULL,
-  `part` varchar(255) NOT NULL,
-  `appt` int NOT NULL,
-  `floor` int NOT NULL,
+  `address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -44,12 +38,9 @@ CREATE TABLE `burger` (
 -- Дамп данных таблицы `burger`
 --
 
-INSERT INTO `burger` (`id`, `name`, `phone`, `email`, `street`, `home`, `part`, `appt`, `floor`, `date`) VALUES
-(43, 'ad in', '+7 (777) 777 77 77', 'olburyak@yandex.ru', '3333', 33, '34', 5, 5, '2023-10-14'),
-(44, 'ad in', '+7 (777) 777 77 77', 'olburyak@yandex.ru', '3333', 33, '34', 5, 5, '2023-10-14'),
-(45, 'ad in', '+7 (777) 777 77 77', 'olburyak@yandex.ru', '3333', 33, '34', 5, 5, '2023-10-14'),
-(46, 'ad in', '+7 (777) 777 77 77', 'olryak@yandex.ru', '3333', 33, '34', 5, 5, '2023-10-14'),
-(47, 'ad in', '+7 (777) 777 77 77', 'olryak@yandex.ru', '3333', 33, '34', 5, 5, '2023-10-14');
+INSERT INTO `burger` (`id`, `phone`, `address`, `date`) VALUES
+(58, '+7 (344) 444 44 44', 'Lermontova,no,73,4,18', '2023-10-18'),
+(59, '+7 (920) 632 85 88', 'УлицаLermontova,Дом18,Корпуснет,Квартира73,Этаж4', '2023-10-18');
 
 -- --------------------------------------------------------
 
@@ -69,8 +60,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `email`, `count`) VALUES
-(109, 'ad in', 'olburyak@yandex.ru', 3),
-(112, 'ad in', 'olryak@yandex.ru', 2);
+(124, 'oleg', 'olburyak@yandex.ru', 2);
 
 --
 -- Индексы сохранённых таблиц
@@ -97,13 +87,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT для таблицы `burger`
 --
 ALTER TABLE `burger`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT для таблицы `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=114;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=126;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -10,14 +10,12 @@ $appt = $_POST['appt'];
 $floor = $_POST['floor'];
 $home = $_POST['home'];
 
-
-
-
+$address = implode(",", ['Улица ' . $street, 'Дом ' . $home, 'Корпус ' . $part, 'Квартира ' . $appt, 'Этаж ' . $floor,]);
 
 
 $mysql = new mysqli('127.0.0.1', 'root', '', 'loftschool');
-$mysql->query("INSERT INTO `burger` (`name`, `date`,`phone`,`email`,`street`, `home`, `part`,`appt`,`floor` )
- VALUES('$name', '$date', '$phone', '$email' , '$street', '$home', '$part', '$appt', '$floor' )");
+$mysql->query("INSERT INTO `burger` (`address`, `date`,`phone`)
+ VALUES('$address', '$date', '$phone')");
 
 $mysql->query("INSERT INTO `user` (`name`, `email`,`count` )
  VALUES('$name', '$email' , '$count_start' ) 
@@ -32,7 +30,7 @@ $data = $res->fetch_all();
 
 $mysql->close();
 
-echo "Спасибо, ваш заказ будет доставлен по адресу: " . "улица " . $street . ", дом " . $home . ", квартира " . $appt;
+echo "Спасибо, ваш заказ будет доставлен по адресу: " . $address;
 echo   "<br>";
 echo "Это ваш " . $data[0][0] . "заказ";
 echo   "<br>";
